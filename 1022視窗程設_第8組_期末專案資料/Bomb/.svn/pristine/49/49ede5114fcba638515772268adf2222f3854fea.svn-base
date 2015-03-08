@@ -1,0 +1,82 @@
+﻿using Bomb.Scene;
+using Bomb.Src.Role;
+using Bomb.Src.Utils;
+using Bomb.Utils;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+
+namespace Bomb.Src.Game
+{
+    class PlayerSelector
+    {
+        private static int MAX_PLAYERS = 4;
+        private IList<InputDevice> devices{ get; set; }
+        private IList<int> selectedDummyPlayerIdx;
+        private IList<JsonPlayerLoader.DummyPlayer> dummyPlayers { get; set; }
+        private IList<ImgSrcs> faces { get; set; }
+        private event EventHandler onPlayerSelectComplete;
+        public PlayerSelector(IList<JsonPlayerLoader.DummyPlayer> dummyPlayers)
+        {
+            this.dummyPlayers = dummyPlayers;
+            foreach (JsonPlayerLoader.DummyPlayer player in dummyPlayers)
+            {
+                Uri uri = new Uri("Images/Tiles/"+player.faceImgSrc,UriKind.Relative);
+                ImgSrcs face = new ImgSrcs(new TileImgSrcsLoader(uri,96,96,0));
+                faces.Add(face);
+
+            }
+            Utility.MW.PreviewKeyUp += MW_PreviewKeyUp;
+            this.devices = new List<InputDevice>();
+
+        }
+
+        void MW_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            if (devices.Contains(e.Device))
+            {
+                int slotIdx = devices.IndexOf(e.Device);
+                switch (e.Key)
+                {
+                    case Key.Right:
+                        selectedDummyPlayerIdx[slotIdx] = (selectedDummyPlayerIdx[slotIdx] + 1) % 4;
+
+                        break;
+                    case Key.Left:
+                        selectedDummyPlayerIdx[slotIdx] = (selectedDummyPlayerIdx[slotIdx] - 1) % 4;
+
+                        break;
+                    case Key.Space:
+                        break;
+
+                }
+            }
+            else
+            {
+                if (devices.Count < MAX_PLAYERS)
+                {
+                    devices.Add(e.Device);
+                    selectedDummyPlayerIdx.Add(0);
+                }
+
+            }
+        }
+
+
+        public void completeSelectPlayer()
+        {
+            IList<JsonPlayerLoader.DummyPlayer> selectedDummyPlayer= new List<JsonPlayerLoader.DummyPlayer>();
+            foreach (int pDummyPlayerIdx in selectedDummyPlayerIdx)
+            {
+                selectedDummyPlayer.Add(dummyPlayers[pDummyPlayerIdx]);
+            }
+
+
+            onPlayerSelectComplete.Invoke(this, new PlayerSelectCompleteEventArgs(devices.ToArray(), selectedDummyPlayer.ToArray()));
+        }
+
+    }
+}

@@ -1,0 +1,82 @@
+﻿using Bomb.Scene;
+using Bomb.Utils;
+using LitJson;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace Bomb.Src.Role
+{
+    class JsonPlayerLoader : IPlayerLoader
+    {
+        private DummyPlayer dummyPlayer {get;set;}
+        public JsonPlayerLoader(Uri uri)
+        {
+            JsonMapper jsonMapper = new JsonMapper();
+            jsonMapper.RegisterImporter<JsonReader, KeyControl>(deserializeKeyControl);
+            Stream jsonStream = Application.GetContentStream(uri).Stream;
+            string jsonStr = new StreamReader(jsonStream, Encoding.UTF8).ReadToEnd();
+            this.dummyPlayer = jsonMapper.ToObject<DummyPlayer>(jsonStr);
+
+        }
+        private KeyControl deserializeKeyControl(JsonReader reader)
+        {
+            return new KeyControl(new JsonKeyControlLoader(reader));
+        }
+        public string getPlayerName()
+        {
+            return dummyPlayer.playerName;
+        }
+
+        public ImgSrcs getWalkImgSrcs()
+        {
+            Uri uri = new Uri("Images/Tiles/" + dummyPlayer.walkImgSrcs, UriKind.Relative);
+            return new ImgSrcs(new TileImgSrcsLoader(uri, dummyPlayer.walkImgTileWidth, dummyPlayer.walkImgTileHeight, dummyPlayer.walkImgTileMargin));
+        }
+
+        public int getMaxBomb()
+        {
+            return dummyPlayer.maxBomb;
+        }
+
+        public double getSpeed()
+        {
+            return dummyPlayer.speed;
+        }
+
+        public KeyControl getKeyControl()
+        {
+            return dummyPlayer.ctrl;
+            
+        }
+        public int getPower()
+        {
+            return dummyPlayer.power;
+        }
+        public DummyPlayer getDummyPlayer()
+        {
+            return dummyPlayer;
+        }
+        public class DummyPlayer
+        {
+           
+            public string playerName { get;private set; }
+            public string walkImgSrcs { get; set; }
+            public string faceImgSrc { get; set; }
+            public int maxBomb { get; set;}
+            public double speed{get;set;}
+            public int power { get; set; }
+            public int walkImgTileWidth { get; set; }
+            public int walkImgTileHeight { get; set; }
+            public int walkImgTileMargin { get; set; }
+            public KeyControl ctrl { get; set; }
+        }
+
+
+       
+    }
+}

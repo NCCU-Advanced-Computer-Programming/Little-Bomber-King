@@ -1,0 +1,184 @@
+﻿using Bomb.Scene;
+using Bomb.Src.Role;
+using Bomb.Src.Utils;
+using Bomb.Utils;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using System.Windows.Controls;
+namespace Bomb.Src.Game
+{
+    class PlayerSelector
+    {
+        private static int MAX_PLAYERS = 4;
+        private IList<InputDevice> devices { get; set; }
+        private IList<int> selectedDummyPlayerIdx;
+        private IList<int> lockSelectedDummyPlayerIdx;
+        private IList<JsonPlayerLoader.DummyPlayer> dummyPlayers { get; set; }
+        private IList<ImgSrcs> faces { get; set; }
+        private event EventHandler onPlayerSelectComplete;
+        public PlayerSelector(IList<JsonPlayerLoader.DummyPlayer> dummyPlayers)
+        {
+            this.dummyPlayers = dummyPlayers;
+            foreach (JsonPlayerLoader.DummyPlayer player in dummyPlayers)
+            {
+                Uri uri = new Uri("Images/Tiles/" + player.faceImgSrc, UriKind.Relative);
+                ImgSrcs face = new ImgSrcs(new TileImgSrcsLoader(uri, 96, 96, 0));
+                faces.Add(face);
+
+            }
+            Utility.MW.PreviewKeyUp += MW_PreviewKeyUp;
+            this.devices = new List<InputDevice>();
+
+        }
+
+        void MW_PreviewKeyUp(object sender, KeyEventArgs e)
+        {
+            if (devices.Contains(e.Device))
+            {
+                int slotIdx = devices.IndexOf(e.Device);
+                if (lockSelectedDummyPlayerIdx[slotIdx] != -1)
+                {
+                    switch (e.Key)
+                    {
+                        case Key.Right:
+                            selectedDummyPlayerIdx[slotIdx] = (selectedDummyPlayerIdx[slotIdx] + 1) % 4;
+                            if (slotIdx == 0)
+                            {
+                                Utility.MW.p1_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p1_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p1_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p1_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp/100*90;
+                                Utility.MW.p1_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p1_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p1_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p1_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 1)
+                            {
+                                Utility.MW.p2_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p2_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p2_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p2_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p2_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p2_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p2_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p2_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 2)
+                            {
+                                Utility.MW.p3_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p3_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p3_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p3_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p3_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p3_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p3_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p3_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 3)
+                            {
+                                Utility.MW.p4_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p4_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p4_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p4_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p4_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p4_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p4_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p4_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            break;
+                        case Key.Left:
+                            selectedDummyPlayerIdx[slotIdx] = (selectedDummyPlayerIdx[slotIdx] - 1) % 4;
+                            if (slotIdx == 0)
+                            {
+                                Utility.MW.p1_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p1_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p1_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p1_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p1_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p1_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p1_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p1_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 1)
+                            {
+                                Utility.MW.p2_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p2_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                               //Utility.MW.p2_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p2_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p2_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p2_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p2_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p2_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 2)
+                            {
+                                Utility.MW.p3_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p3_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p3_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p3_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p3_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p3_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p3_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p3_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            else if (slotIdx == 3)
+                            {
+                                Utility.MW.p4_Img.Source = faces[selectedDummyPlayerIdx[slotIdx]][0];
+                                Utility.MW.p4_Name.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].playerName;
+                                //Utility.MW.p4_Hp.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp;
+                                Utility.MW.p4_Hp.Value = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxHp / 100 * 90;
+                                Utility.MW.p4_Bomb.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].maxBomb;
+                                Utility.MW.p4_Atk.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].atk;
+                                Utility.MW.p4_Power.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].power;
+                                Utility.MW.p4_Speed.Content = dummyPlayers[selectedDummyPlayerIdx[slotIdx]].speed;
+                            }
+                            break;
+                        case Key.Space:
+                            lockSelectedDummyPlayerIdx[slotIdx] = -1;
+                            break;
+
+                    }
+                }
+                else
+                {
+                    switch (e.Key)
+                    {
+                        case Key.Space:
+                            lockSelectedDummyPlayerIdx[slotIdx] = 1;
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                if (devices.Count < MAX_PLAYERS)
+                {
+                    devices.Add(e.Device);
+                    selectedDummyPlayerIdx.Add(0);
+                }
+
+            }
+        }
+
+
+        public void completeSelectPlayer()
+        {
+            IList<JsonPlayerLoader.DummyPlayer> selectedDummyPlayer = new List<JsonPlayerLoader.DummyPlayer>();
+            foreach (int pDummyPlayerIdx in selectedDummyPlayerIdx)
+            {
+                selectedDummyPlayer.Add(dummyPlayers[pDummyPlayerIdx]);
+            }
+
+
+
+            onPlayerSelectComplete.Invoke(this, new PlayerSelectCompleteEventArgs(devices.ToArray(), selectedDummyPlayer.ToArray()));
+
+        }
+
+    }
+}

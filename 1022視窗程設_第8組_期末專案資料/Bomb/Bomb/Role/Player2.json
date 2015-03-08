@@ -1,0 +1,25 @@
+﻿{
+	"playerName":"好慢..",
+	"walkImgSrcs":"Role2.png",
+	"maxBomb":40,
+	"speed":2,
+	"power":9,
+	"atk":25, 
+	"maxHp":5000,
+	"walkImgTileWidth":32,
+	"walkImgTileHeight":32,
+	"walkImgTileMargin":0,
+	"faceImgSrc":"Face2.png",
+	"ctrl":
+	{
+		"walkKeyBinding":
+		{
+			"Down":"DOWN",
+			"Left":"LEFT",
+			"Right":"RIGHT",
+			"Up":"UP"
+		},
+		"layBombKey":"Space"
+	}
+
+}

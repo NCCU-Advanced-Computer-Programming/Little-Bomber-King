@@ -1,0 +1,24 @@
+﻿using Bomb.Scene;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bomb.Src.Role
+{
+    public interface IPlayerLoader
+    {
+
+        int getMaxHp();
+        int getAtk();
+         string getPlayerName();
+         ImgSrcs getWalkImgSrcs();
+         int getMaxBomb();
+         double getSpeed();
+         int getPower();
+         KeyControl getKeyControl(); 
+        
+
+    }
+}

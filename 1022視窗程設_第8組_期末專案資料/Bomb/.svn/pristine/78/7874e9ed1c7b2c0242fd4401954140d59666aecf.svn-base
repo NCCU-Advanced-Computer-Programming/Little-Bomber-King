@@ -1,0 +1,30 @@
+﻿using Bomb.Src;
+using Bomb.Src.Scene;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+
+namespace Bomb.Scene
+{
+    class RoleLayer : Canvas
+    {
+        public IList<Player> players { get;private set; }
+        public Int32Point[] startPos { get; set; }
+        public RoleLayer(Int32Point[] startPos) : base()
+        {
+            this.startPos = startPos;
+            this.players = new List<Player>();
+        }
+        public void addPlayer(Player player)
+        {
+            Int32Point pos = startPos[players.Count];
+            player.gridX = pos.x;
+            player.gridY = pos.y;
+            Children.Add(player);
+        }
+    }
+}

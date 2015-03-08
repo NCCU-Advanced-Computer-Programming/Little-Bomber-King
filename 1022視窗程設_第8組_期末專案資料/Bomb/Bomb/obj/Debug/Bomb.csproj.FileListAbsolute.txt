@@ -1,0 +1,91 @@
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Bomb.exe.config
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.csprojResolveAssemblyReference.cache
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\MainWindow.baml
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\MainWindow.g.cs
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\App.g.cs
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb_MarkupCompile.cache
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.g.resources
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.Properties.Resources.resources
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.csproj.GenerateResource.Cache
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Bomb.exe
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Bomb.pdb
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.exe
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb.pdb
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Scene\Scene1.json
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb_Content.g.cs
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\SceneFloor.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\SceneInstance.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Role\Player1.json
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Role1.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Bomb.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\CoreDetonate.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\DownDetonate.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\LeftDetonate.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\RightDetonate.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\UpDetonate.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\PlayerInfoPanel.baml
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\App.baml
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\PlayerInfoPanel.g.cs
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\obj\Debug\Bomb_MarkupCompile.lref
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\bg.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\idx.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Role\Player2.json
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Role\Player3.json
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Role\Player4.json
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Face1.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Face2.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Face3.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Face4.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Musics\bgm1.mp3
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Musics\bgm2.mp3
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Musics\ok.mp3
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Musics\magic.mp3
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Role2.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Role3.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Images\Tiles\Role4.png
+C:\Users\JohnLin\Documents\Visual Studio 2012\Projects\Bomb\Bomb\bin\Debug\Role\Player5.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Bomb.exe.config
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb.exe
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb.pdb
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Role\Player5.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\bg.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Bomb.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\CoreDetonate.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\DownDetonate.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Musics\bgm1.mp3
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Musics\bgm2.mp3
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Musics\magic.mp3
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Musics\ok.mp3
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Role\Player2.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Role\Player3.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Role\Player4.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Face1.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Face2.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Face3.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Face4.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\idx.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\LeftDetonate.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\RightDetonate.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Role1.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\UpDetonate.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Scene\Scene1.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Role\Player1.json
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Role2.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Role3.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\Role4.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\SceneFloor.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Images\Tiles\SceneInstance.png
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Bomb.exe
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\bin\Debug\Bomb.pdb
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\PlayerInfoPanel.baml
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\App.baml
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\MainWindow.g.cs
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\PlayerInfoPanel.g.cs
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\App.g.cs
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb_Content.g.cs
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb_MarkupCompile.cache
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb_MarkupCompile.lref
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\MainWindow.baml
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb.g.resources
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb.Properties.Resources.resources
+D:\Temp\103_WP_Final_hw100029880\(08-爆爆王)100306012\1022視窗程設_第8組_期末專案資料\Bomb\Bomb\obj\Debug\Bomb.csproj.GenerateResource.Cache

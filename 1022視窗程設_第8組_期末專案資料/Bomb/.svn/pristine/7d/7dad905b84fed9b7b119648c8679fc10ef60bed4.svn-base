@@ -1,0 +1,25 @@
+﻿{
+	"playerName":"我超快",
+	"walkImgSrcs":"Role4.png",
+	"maxBomb":10,
+	"speed":15,
+	"power":2,
+	"atk":15,
+	"maxHp":500,
+	"walkImgTileWidth":32,
+	"walkImgTileHeight":32,
+	"walkImgTileMargin":0,
+	"faceImgSrc":"Face4.png",
+	"ctrl":
+	{
+		"walkKeyBinding":
+		{
+			"Down":"DOWN",
+			"Left":"LEFT",
+			"Right":"RIGHT",
+			"Up":"UP"
+		},
+		"layBombKey":"Space"
+	}
+
+}

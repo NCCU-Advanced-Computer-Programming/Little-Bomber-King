@@ -1,0 +1,52 @@
+﻿using Bomb.Scene;
+using Bomb.Src.Role;
+using Bomb.Src.Utils;
+using Bomb.Tile;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bomb.Src.Game
+{
+    class GameManager
+    {
+        public static GameManager currGameMgr { get; set; }
+        public bool isGaming { get;private set; }
+        public GameScene scene { get;private set; }
+        public IList<Player> players 
+        {
+            get
+            {
+                return scene.roleLayer.players;
+            }
+        }
+        public GameManager()
+        {
+            currGameMgr = this;
+            this.isGaming = false;
+            loadScene();
+            loadPlayer();
+            
+        }
+        private void loadScene()
+        {
+            TileMap.JsonTileMapParser mapParser = new TileMap.JsonTileMapParser(new Uri("/Scene/Scene1.json", UriKind.Relative));
+            TileMap tileMap = mapParser.parse();
+            TileSceneLoader sceneLoader = new TileSceneLoader(tileMap);
+            this.scene = new GameScene(sceneLoader);
+            scene.renderOn(Utility.MW.cvsScene);
+        }
+        private void loadPlayer()
+        {
+            Player player = new Player(new JsonPlayerLoader(new Uri("/Role/Player1.json",UriKind.Relative)));
+            scene.roleLayer.addPlayer(player);
+
+        }
+        public void startGame()
+        {
+            isGaming = true;
+        }
+    }
+}

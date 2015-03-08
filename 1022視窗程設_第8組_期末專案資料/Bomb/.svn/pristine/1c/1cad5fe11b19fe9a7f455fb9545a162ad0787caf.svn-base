@@ -1,0 +1,58 @@
+﻿using Bomb.Src.Scene;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+
+namespace Bomb.Scene
+{
+    class BoxLayer :Grid
+    {
+        public Box[,] boxes { get; private set; }
+        public Dictionary<Box, Int32Point> boxPositions { get; private set; }
+        public BoxLayer(int rows,int columns,double rowHeight,double columnWidth)
+        {
+            this.Width = columns * columnWidth;
+            this.Height = rows * rowHeight;
+            for (int i = 0; i < rows; i++)
+            {
+                this.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(rowHeight) });
+            }
+            for (int i = 0; i < columns; i++)
+            {
+                this.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(columnWidth) });
+            }
+            this.boxes = new Box[rows,columns];
+            this.boxPositions = new Dictionary<Box, Int32Point>();
+            
+        }
+        
+        public void addBox(Box box,int row,int column)
+        {
+           
+
+            box.SetValue(Grid.ColumnProperty, column);
+            box.SetValue(Grid.RowProperty, row);
+            boxes[row, column] = box;
+            boxPositions[box] = new Int32Point(column,row);
+            Children.Add(box);
+            
+            
+
+        }
+        public void destroy(Box box)
+        {
+            Int32Point pos = boxPositions[box];
+            boxes[pos.y, pos.x] = null;
+            Children.Remove(box);
+        }
+        public void destroyAt(int row, int column)
+        {
+            destroy(boxes[row,column]);
+        }
+    }
+}

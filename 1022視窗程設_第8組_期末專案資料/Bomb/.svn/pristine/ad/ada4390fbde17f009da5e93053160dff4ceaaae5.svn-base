@@ -1,0 +1,122 @@
+﻿using Bomb.Scene;
+using Bomb.Src;
+using Bomb.Src.Game;
+using Bomb.Tile;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using System.Windows.Forms;
+using System.Windows.Interop;
+using Bomb.Src.Utils;
+namespace Bomb
+{
+    /// <summary>
+    /// MainWindow.xaml 的互動邏輯
+    /// </summary>
+    /// 
+    
+    public partial class MainWindow : Window
+    {
+        public event EventHandler<RawKeyInputEventArg> onRawKeyDown;
+        public event EventHandler<RawKeyInputEventArg> onRawKeyUp;
+        private GameManager manager { get; set; }
+        RawStuff.InputDevice id;
+        Message message = new Message();
+        int NumberOfKeyboards;
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            StartWndProcHandler();
+            manager = new GameManager();
+            manager.showMainMenu();
+            //manager.selectPlayer();
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////
+        private void onRawKeyDown_callback(object sender, RawStuff.InputDevice.KeyControlEventArgs e)
+        {
+            //string[] tokens = e.Keyboard.Name.Split(';');
+            //string token = tokens[1];
+            if (onRawKeyDown != null)
+            {
+                onRawKeyDown(sender,new RawKeyInputEventArg(e));
+            }
+         
+        }
+        private void onRawKeyUp_callback(object sender, RawStuff.InputDevice.KeyControlEventArgs e)
+        {
+            //string[] tokens = e.Keyboard.Name.Split(';');
+            //string token = tokens[1];
+            if (onRawKeyUp != null)
+            {
+                onRawKeyUp(sender, new RawKeyInputEventArg(e));
+            }
+
+        }
+
+        public IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+            if (id != null)
+            {
+                // I could have done one of two things here.
+                // 1. Use a Message as it was used before.
+                // 2. Changes the ProcessMessage method to handle all of these parameters(more work).
+                //    I opted for the easy way.
+
+                //Note: Depending on your application you may or may not want to set the handled param.
+
+                message.HWnd = hwnd;
+                message.Msg = msg;
+                message.LParam = lParam;
+                message.WParam = wParam;
+
+                id.ProcessMessage(message);
+            }
+            return IntPtr.Zero;
+        }
+
+       
+
+        void StartWndProcHandler()
+        {
+            IntPtr hwnd = IntPtr.Zero;
+            Window myWin = System.Windows.Application.Current.MainWindow;
+
+            try
+            {
+                hwnd = new WindowInteropHelper(myWin).Handle;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            //Get the Hwnd source   
+            HwndSource source = HwndSource.FromHwnd(hwnd);
+            //Win32 queue sink
+            source.AddHook(new HwndSourceHook(WndProc));
+
+            id = new RawStuff.InputDevice(source.Handle);
+            NumberOfKeyboards = id.EnumerateDevices();
+
+            id.KeyDown += new RawStuff.InputDevice.DeviceEventHandler(onRawKeyDown_callback);
+            id.KeyUp += new RawStuff.InputDevice.DeviceEventHandler(onRawKeyUp_callback);
+        }
+
+    }
+}

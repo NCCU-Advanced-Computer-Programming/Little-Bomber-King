@@ -1,0 +1,25 @@
+﻿{
+	"playerName":"P2",
+	"walkImgSrcs":"Role1.png",
+	"maxBomb":10,
+	"speed":6,
+	"power":5,
+	"atk":10,
+	"maxHp":250,
+	"walkImgTileWidth":32,
+	"walkImgTileHeight":32,
+	"walkImgTileMargin":0,
+	"faceImgSrc":"Face2.png",
+	"ctrl":
+	{
+		"walkKeyBinding":
+		{
+			"Down":"DOWN",
+			"Left":"LEFT",
+			"Right":"RIGHT",
+			"Up":"UP"
+		},
+		"layBombKey":"Space"
+	}
+
+}

@@ -1,0 +1,25 @@
+﻿{
+	"playerName":"Ernie",
+	"walkImgSrcs":"Role4.png",
+	"maxBomb":1000,
+	"speed":9,
+	"power":9,
+	"atk":2,
+	"maxHp":2000,
+	"walkImgTileWidth":32,
+	"walkImgTileHeight":32,
+	"walkImgTileMargin":0,
+	"faceImgSrc":"Face4.png",
+	"ctrl":
+	{
+		"walkKeyBinding":
+		{
+			"Down":"DOWN",
+			"Left":"LEFT",
+			"Right":"RIGHT",
+			"Up":"UP"
+		},
+		"layBombKey":"Space"
+	}
+
+}

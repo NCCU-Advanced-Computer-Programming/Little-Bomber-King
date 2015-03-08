@@ -1,0 +1,25 @@
+﻿{
+	"playerName":"血很厚",
+	"walkImgSrcs":"Role3.png",
+	"maxBomb":20,
+	"speed":6,
+	"power":3,
+	"atk":10,
+	"maxHp":3000,
+	"walkImgTileWidth":32,
+	"walkImgTileHeight":32,
+	"walkImgTileMargin":0,
+	"faceImgSrc":"Face3.png",
+	"ctrl":
+	{
+		"walkKeyBinding":
+		{
+			"Down":"DOWN",
+			"Left":"LEFT",
+			"Right":"RIGHT",
+			"Up":"UP"
+		},
+		"layBombKey":"Space"
+	}
+
+}

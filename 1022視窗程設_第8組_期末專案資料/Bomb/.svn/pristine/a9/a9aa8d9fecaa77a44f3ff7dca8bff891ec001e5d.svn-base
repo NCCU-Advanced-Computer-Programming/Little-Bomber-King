@@ -1,0 +1,262 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Bomb" mc:Ignorable="d" x:Class="Bomb.MainWindow"
+        Title="MainWindow" Height="960" Width="1280" Background="#FF2B5091" Loaded="Window_Loaded" Visibility="Visible">
+	
+		
+	<Canvas Width="1280" Height="960" Margin="0">
+		
+	<Grid x:Name="grdMainMenu" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="180"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="880"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnSelectRole" Content="Select Role" Grid.Column="1" Margin="164,0,196,0" Grid.Row="1" VerticalAlignment="Top" Width="436" Height="170" FontSize="48" FontFamily="MV Boli" BorderBrush="{x:Null}" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+            	<Button.RenderTransform>
+            		<TransformGroup>
+            			<ScaleTransform/>
+            			<SkewTransform/>
+            			<RotateTransform/>
+            			<TranslateTransform X="56"/>
+            		</TransformGroup>
+            	</Button.RenderTransform>
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/Tiles/bg.png" TileMode="Tile" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnExit" Content="Exit" Grid.Column="1" HorizontalAlignment="Center" Margin="248,0,196,0" Grid.Row="2" VerticalAlignment="Top" Width="436" Height="148" FontSize="48" FontFamily="MV Boli" BorderBrush="{x:Null}" Cursor="Hand">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/Tiles/bg.png" Stretch="UniformToFill"/>
+                </Button.Background>
+            </Button>
+            <Image Grid.Column="1" HorizontalAlignment="Left" Height="513" Margin="136,32,0,0" VerticalAlignment="Top" Width="802" Source="Images/Tiles/idx.png" Grid.ColumnSpan="2"/>
+
+        </Grid>
+
+
+        <Grid x:Name="grdSelectPlayer" VerticalAlignment="Top" Canvas.Left="0" Width="1280" Height="960" Canvas.Top="0" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="244"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="616"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="132"/>
+                <ColumnDefinition Width="244"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="244"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="244"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="244"/>
+                <ColumnDefinition Width="132"/>
+            </Grid.ColumnDefinitions>
+
+            <Border BorderBrush="{DynamicResource playerInfoBoderBrush}" BorderThickness="1" Grid.Column="1" HorizontalAlignment="Left" Height="834" Margin="10,10,0,0" Grid.Row="1" Grid.RowSpan="5" VerticalAlignment="Top" Width="244" Background="{DynamicResource playerInfoFillBrush}" CornerRadius="5"/>
+            <Image x:Name="p1_Img" Grid.Column="1" HorizontalAlignment="Left" Height="244" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="244" Source="Images/Tiles/Face1.png"/>
+            <Border BorderBrush="{DynamicResource playerInfoBoderBrush}" BorderThickness="1" Grid.Column="3" HorizontalAlignment="Left" Height="834" Margin="1,10,0,0" Grid.Row="1" Grid.RowSpan="5" VerticalAlignment="Top" Width="244" Background="{DynamicResource playerInfoFillBrush}" CornerRadius="5"/>
+            <Image x:Name="p2_Img" Grid.Column="3" HorizontalAlignment="Left" Height="244" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="244" Source="Images/Tiles/Face2.png"/>
+            <Border BorderBrush="{DynamicResource playerInfoBoderBrush}" BorderThickness="1" Grid.Column="5" HorizontalAlignment="Left" Height="834" Grid.Row="1" Grid.RowSpan="5" VerticalAlignment="Top" Width="244" Background="{DynamicResource playerInfoFillBrush}" CornerRadius="5" Margin="5,10,0,0"/>
+            <Image x:Name="p3_Img" Grid.Column="5" HorizontalAlignment="Left" Height="244" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="244" Source="Images/Tiles/Face3.png"/>
+            <Border BorderBrush="{DynamicResource playerInfoBoderBrush}" BorderThickness="1" Grid.Column="7" HorizontalAlignment="Left" Height="834" Margin="7,10,0,0" Grid.Row="1" Grid.RowSpan="5" VerticalAlignment="Top" Width="244" Background="{DynamicResource playerInfoFillBrush}" CornerRadius="5"/>
+            <Image x:Name="p4_Img" Grid.Column="7" HorizontalAlignment="Left" Height="244" Margin="10,10,0,0" Grid.Row="3" VerticalAlignment="Top" Width="224" Source="Images/Tiles/Face4.png"/>
+
+
+            <Label Content="1" Grid.Column="1" HorizontalAlignment="Left" Margin="101,0,0,0" VerticalAlignment="Top" FontSize="64" FontFamily="MV Boli" Background="Transparent" FontWeight="Bold" Grid.RowSpan="4" Width="50" Height="100"/>
+            <Label Content="2" Grid.Column="3" HorizontalAlignment="Left" Margin="99,0,0,0" VerticalAlignment="Top" FontSize="64" FontFamily="MV Boli" Background="Transparent" FontWeight="Bold" Grid.RowSpan="4" Width="66" Height="100"/>
+            <Label Content="3" Grid.Column="5" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" FontSize="64" FontFamily="MV Boli" Background="Transparent" FontWeight="Bold" Grid.RowSpan="4" Width="63" Height="100"/>
+            <Label Content="4" Grid.Column="7" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Top" FontSize="64" FontFamily="MV Boli" Background="Transparent" FontWeight="Bold" Grid.RowSpan="4" Width="65" Height="100"/>
+
+
+
+
+            <Grid Grid.Column="1" HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="244">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="94"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Player:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="BOMB:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="SPEED:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="ATK:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="POWER:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <ProgressBar Value="0" Width="90" Height="16" Grid.Row="1" Margin="138,55,16,10" Grid.ColumnSpan="2"/>
+                <Label x:Name="p1_Name" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <!--<Label x:Name="p1_Hp" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>-->
+                <ProgressBar x:Name="p1_Hp" Value="0" Width="90" Height="16" Grid.Row="1" Margin="138,55,16,10" Grid.ColumnSpan="2"/>
+                <Label x:Name="p1_Bomb" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label x:Name="p1_Speed" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label x:Name="p1_Atk" Content=" " Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli" Margin="0,5,0,0" Grid.RowSpan="2"/>
+                <Label x:Name="p1_Power" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+            </Grid>
+            <Grid Grid.Column="3" HorizontalAlignment="Left" Height="500" Margin="0,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="244">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="94"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Player:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="BOMB:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="SPEED:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="ATK:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="POWER:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+
+                <Label x:Name="p2_Name" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <!-- <Label x:Name="p2_Hp" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>-->
+                <ProgressBar x:Name="p2_Hp" Value="0" Width="90" Height="16" Grid.Row="1" Margin="138,55,16,10" Grid.ColumnSpan="2"/>
+                <Label x:Name="p2_Bomb" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label x:Name="p2_Speed" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label x:Name="p2_Atk" Content=" " Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli"/>
+                <Label x:Name="p2_Power" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+            </Grid>
+            <Grid Grid.Column="5" HorizontalAlignment="Left" Height="500" Margin="0,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="244">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Player:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="BOMB:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="SPEED:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="ATK:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="POWER:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+
+                <Label x:Name="p3_Name" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <!--<Label x:Name="p3_Hp" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>-->
+                <ProgressBar x:Name="p3_Hp" Value="0" Width="90" Height="16" Grid.Row="1" Margin="138,55,16,10" Grid.ColumnSpan="2"/>
+                <Label x:Name="p3_Bomb" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label x:Name="p3_Speed" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label x:Name="p3_Atk" Content=" " Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli"/>
+                <Label x:Name="p3_Power" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+            </Grid>
+            <Grid Grid.Column="7" HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="244" Grid.ColumnSpan="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="94"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Player:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>
+                <Label Content="BOMB:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label Content="SPEED:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label Content="ATK:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli"/>
+                <Label Content="POWER:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+                <Label Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <Label Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>
+                <Label Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label Content=" " Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli"/>
+                <Label Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+            </Grid>
+            <Grid Grid.Column="7" HorizontalAlignment="Left" Height="500" Margin="10,10,0,0" Grid.Row="5" VerticalAlignment="Top" Width="244" Grid.ColumnSpan="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="94"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Player:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="HP:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="BOMB:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="SPEED:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="ATK:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+                <Label Content="POWER:" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="150" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli" Foreground="{DynamicResource systemFontColor}"/>
+
+                <Label x:Name="p4_Name" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" FontFamily="MV Boli"/>
+                <!--<Label x:Name="p4_Hp" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="1" FontFamily="MV Boli"/>-->
+                <ProgressBar x:Name="p4_Hp" Value="0" Width="90" Height="16" Grid.Row="1" Margin="138,55,16,10" Grid.ColumnSpan="2"/>
+                <Label x:Name="p4_Bomb" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="2" FontFamily="MV Boli"/>
+                <Label x:Name="p4_Speed" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="3" FontFamily="MV Boli"/>
+                <Label x:Name="p4_Atk" Content=" " Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="4" FontFamily="MV Boli"/>
+                <Label x:Name="p4_Power" Content=" " Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="26.667" Width="94" Height="80" VerticalContentAlignment="Bottom" Grid.Row="5" FontFamily="MV Boli"/>
+
+            </Grid>
+            <Button x:Name="btnStartGame" Content="開 始 遊 戲" Grid.Column="3" HorizontalAlignment="Left" Margin="155,0,0,39" Grid.Row="5" VerticalAlignment="Bottom" Width="192" Height="49" FontSize="30" FontFamily="MV Boli" Foreground="#FF3333F3" Grid.ColumnSpan="3" Opacity="0.785" FontWeight="Bold" IsCancel="True">
+                <Button.Background>
+                    <ImageBrush ImageSource="Images/Tiles/DownDetonate.png"/>
+                </Button.Background>
+            </Button>
+
+        </Grid>
+	<Grid x:Name="grdGame" Visibility="Hidden">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="80"/>
+			<RowDefinition Height="800"/>
+			<RowDefinition Height="80"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="11"/>
+			<ColumnDefinition Width="800"/>
+			<ColumnDefinition Width="11"/>
+			<ColumnDefinition Width="450"/>
+		</Grid.ColumnDefinitions>
+    	
+		<Border BorderBrush="White" BorderThickness="1" Grid.Column="1" Grid.Row="1" CornerRadius="5" VerticalAlignment="Bottom">
+			<Canvas x:Name="cvsScene" Background="White"  Height="800"  Width="800" />
+		</Border>
+			<Border BorderThickness="1" Grid.Column="3" Margin="10" Grid.Row="1" CornerRadius="5" Background="#FF006099">
+				<StackPanel x:Name="stkPlayerInfoPanel"/>
+			
+		</Border>
+		
+	</Grid>
+	</Canvas>
+</Window>

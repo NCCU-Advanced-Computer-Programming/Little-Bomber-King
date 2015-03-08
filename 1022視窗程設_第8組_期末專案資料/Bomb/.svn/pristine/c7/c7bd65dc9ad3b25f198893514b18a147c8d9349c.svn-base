@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
+
+namespace Bomb.Src.Game
+{
+    class PlayerSelectCompleteEventArgs : EventArgs
+    {
+       
+        private InputDevice[] devices;
+        private Bomb.Src.Role.JsonPlayerLoader.DummyPlayer[] dummyPlayers;
+        public PlayerSelectCompleteEventArgs(InputDevice[] devices,Bomb.Src.Role.JsonPlayerLoader.DummyPlayer[] dummyPlayers)
+        {
+            this.devices = devices;
+            this.dummyPlayers = dummyPlayers;
+        }
+    }
+}
